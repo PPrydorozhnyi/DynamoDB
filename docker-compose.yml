@@ -1,0 +1,33 @@
+# Docker Compose file Reference (https://docs.docker.com/compose/compose-file/)
+version: '3.1'
+
+#Define services of the solution
+services:
+
+  #DynamoDB Database for the server side application
+  dynamodb:
+    image: amazon/dynamodb-local
+    hostname: dynamodb-local
+    container_name: dynamodb-local
+    ports:
+      - "8042:8000"
+
+  #Back-end Spring Boot Application
+  dynamotest-app:
+    #The docker file in dynamotest-app build the jar and provides the docker image with the following name.
+    container_name: dynamotest-app
+    image: drakus73/dynamo-application-test:dynamo-test
+
+    #Environment variables for Spring Boot Application.
+    environment:
+      - SPRING_PROFILE=default
+      - SERVICE_NAME=dynamo-test
+      - DB_SERVER=dynamodb
+    ports:
+      - "8099:8090"
+    depends_on:
+      - dynamodb
+
+#Volumes for DB data
+volumes:
+  diploma-data:
