@@ -17,6 +17,7 @@
 	<properties>
 		<java.version>11</java.version>
 		<spring.swagger.version>2.9.2</spring.swagger.version>
+		<model.mapper.version>2.3.0</model.mapper.version>
 	</properties>
 
 	<dependencyManagement>
@@ -62,7 +63,6 @@
 		<dependency>
 			<groupId>com.amazonaws</groupId>
 			<artifactId>aws-java-sdk-dynamodb</artifactId>
-			<version>1.11.880</version>
 		</dependency>
 		<dependency>
 			<groupId>com.github.derjust</groupId>
@@ -70,21 +70,17 @@
 			<version>5.1.0</version>
 		</dependency>
 		<dependency>
-			<groupId>com.google.code.gson</groupId>
-			<artifactId>gson</artifactId>
-			<version>2.8.5</version>
-		</dependency>
-		<dependency>
 			<groupId>com.amazonaws</groupId>
 			<artifactId>aws-java-sdk-s3</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.amazonaws</groupId>
-			<artifactId>aws-java-sdk-dynamodb</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-commons</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.modelmapper</groupId>
+			<artifactId>modelmapper</artifactId>
+			<version>${model.mapper.version}</version>
 		</dependency>
 	</dependencies>
 
@@ -98,7 +94,7 @@
 			<plugin>
 				<groupId>com.spotify</groupId>
 				<artifactId>dockerfile-maven-plugin</artifactId>
-				<version>1.4.10</version>
+				<version>1.4.13</version>
 				<executions>
 					<execution>
 						<id>default</id>
