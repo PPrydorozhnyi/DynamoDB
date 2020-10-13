@@ -4,6 +4,8 @@ import com.nosql.aws.dynamotest.model.entity.RobotConfiguration;
 import com.nosql.aws.dynamotest.repository.RobotConfigurationRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class RobotConfigurationService {
 
@@ -16,4 +18,6 @@ public class RobotConfigurationService {
     public RobotConfiguration save(RobotConfiguration configuration) {
         return repository.save(configuration);
     }
+
+    public List<RobotConfiguration> getAll() {return repository.findAll();}
 }

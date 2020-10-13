@@ -9,6 +9,8 @@ services:
     image: amazon/dynamodb-local
     hostname: dynamodb-local
     container_name: dynamodb-local
+    volumes:
+      - dynamotest-data:/Users/petropridorozhnyi/IdeaProjects/dynamo-test/data
     ports:
       - "8042:8000"
 
@@ -30,4 +32,4 @@ services:
 
 #Volumes for DB data
 volumes:
-  diploma-data:
+  dynamotest-data:
