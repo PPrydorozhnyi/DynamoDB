@@ -7,7 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
 @EnableScan
-public interface RobotConfigurationRepository extends CrudRepository<RobotConfiguration, Integer> {
+public interface RobotConfigurationRepository extends CrudRepository<RobotConfiguration, String> {
 
     List<RobotConfiguration> findAll();
 }
