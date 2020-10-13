@@ -1,5 +1,15 @@
 # DynamoDB
-Simple test application for KPI
+Simple test application for KPI. Required Java 11 and Docker
+
+## Build
+### With Maven
+```
+mvn clean install
+```
+### With Maven wrapper
+```
+./mvnw clean install
+```
 
 ## Configuration
 Change path of volume for storing DB data in docker-compose.yml
