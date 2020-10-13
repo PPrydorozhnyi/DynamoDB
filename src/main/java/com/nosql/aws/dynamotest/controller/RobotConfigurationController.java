@@ -62,7 +62,7 @@ public class RobotConfigurationController {
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void update(@PathVariable String id) {
+    public void delete(@PathVariable String id) {
         log.info("Delete robot configuration by id {}", id);
         service.delete(id);
     }

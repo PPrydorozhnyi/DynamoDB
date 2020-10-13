@@ -11,6 +11,8 @@ services:
     container_name: dynamodb-local
     volumes:
       - dynamotest-data:/Users/petropridorozhnyi/IdeaProjects/dynamo-test/data
+    working_dir: /Users/petropridorozhnyi/IdeaProjects/dynamo-test/data
+    command: "-jar DynamoDBLocal.jar -sharedDb -dbPath ."
     ports:
       - "8042:8000"
 
